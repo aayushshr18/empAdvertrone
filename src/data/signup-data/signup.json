@@ -1,0 +1,79 @@
+{
+  "metaData": {
+    "title": "SignUp"
+  },
+  "topSection": {
+    "title": "Sign Up"
+  },
+  "formSection": {
+    "inputComponents": [
+      {
+        "component": "name",
+        "details": {
+          "label": "Full Name",
+          "placeholder": "E.g. John Doe"
+        }
+      },
+      {
+        "component": "email",
+        "details": {
+          "label": "Email Address",
+          "placeholder": "E.g. xyz@gmail.com"
+        }
+      },
+      {
+        "component": "password",
+        "details": {
+          "label": "Password",
+          "placeholder": "******"
+        }
+      },
+      {
+        "component": "phoneno",
+        "details": {
+          "label": "Phone Number",
+          "placeholder": ""
+        }
+      },
+      {
+        "component": "agent_code",
+        "details": {
+          "label": "Agent Code",
+          "placeholder": ""
+        }
+      },
+      {
+        "component": "accountno",
+        "details": {
+          "label": "Account No.",
+          "placeholder": ""
+        }
+      },
+      {
+        "component": "ifsc",
+        "details": {
+          "label": "IFSC",
+          "placeholder": ""
+        }
+      },
+      {
+        "component": "upiid",
+        "details": {
+          "label": "UPI ID",
+          "placeholder": ""
+        }
+      },
+      {
+        "component": "button",
+        "details": {
+          "text": "Submit",
+          "type": "submit",
+          "button": "primary"
+        }
+      }
+    ],
+    "bottomText": "Already a member?",
+    "linkText": "Login",
+    "signUpLink": "/login"
+  }
+}

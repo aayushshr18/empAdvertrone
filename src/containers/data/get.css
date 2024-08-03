@@ -1,0 +1,53 @@
+  .Capp-header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: calc(10px + 2vmin);
+    width: 100% !important;
+    padding: 100px;
+  }
+
+  .form-group {
+    margin: 20px 0;
+  }
+
+  .form-control {
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 16px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    margin: 10px 0;
+  }
+
+  
+  .btn-toggle-flag:hover {
+    opacity: 0.8;
+  }
+
+  .alert {
+    color: red;
+    margin: 20px 0;
+  }
+
+  .data-display {
+    border: 1px solid rgb(18, 18, 21);
+    padding: 10px;
+    margin: 20px 0;
+    text-align: left;
+  }
+
+  .data-display p {
+    margin: 5px 0;
+  }
