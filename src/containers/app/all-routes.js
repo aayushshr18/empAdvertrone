@@ -16,11 +16,16 @@ import Profile from '../profile';
 import TasksBoard from '../tasks-board';
 import GetData from '../data/GetData';
 import Form from '../form/Form';
+import Signup from '../sign-up';
 
 export const allRoutes = [
   {
     path: '/login',
     element: <Login {...loginData} />
+  },
+  {
+    path: '/signup',
+    element: <Signup {...loginData} />
   },
   {
     path: '/form',
