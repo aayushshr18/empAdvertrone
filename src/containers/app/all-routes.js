@@ -15,11 +15,16 @@ import employeeDetailsData from '../../data/employeeDetailsData.json';
 import Profile from '../profile';
 import TasksBoard from '../tasks-board';
 import GetData from '../data/GetData';
+import Form from '../form/Form';
 
 export const allRoutes = [
   {
     path: '/login',
     element: <Login {...loginData} />
+  },
+  {
+    path: '/form',
+    element: <Form />
   },
   {
     path: '/reset-password',

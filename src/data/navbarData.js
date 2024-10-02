@@ -10,9 +10,9 @@ export const mapNavbarData = (data)=>{
                 id: 'navitem-1'
             },
             {
-                to: '/employees',
-                paths: ['employees'],
-                title: 'Assigement',
+                to: '/form',
+                paths: [''],
+                title: 'Form',
                 icon: 'employees_icon',
                 id: 'navitem-2'
             },
@@ -36,13 +36,6 @@ export const mapNavbarData = (data)=>{
                 title: 'Withrawal',
                 icon: 'tasks_icon',
                 id: 'navitem-5'
-            },
-            {
-                to: '/taskdata',
-                paths: ['taskdata'],
-                title: 'Data Task',
-                icon: 'data_icon',
-                id: 'navitem-6'
             },
             {
                 to: '/profile',

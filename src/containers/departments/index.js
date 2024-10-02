@@ -196,21 +196,21 @@ const Departments = () => {
                   <TextField
                     id="referred_agent_id"
                     name="referred_agent_id"
-                    label="Agent Code:"
+                    label="Employee Id:"
                     value={newLeads.referred_agent_id}
                     onChange={handleInputChange}
                   />
                   <TextField
                     id="name"
                     name="name"
-                    label="Name:"
+                    label="File Name:"
                     value={newLeads.name}
                     onChange={handleInputChange}
                   />
                   <TextField
                     id="mob_no"
                     name="mob_no"
-                    label="Mob_No:"
+                    label="PO Number:"
                     value={newLeads.mob_no}
                     onChange={handleInputChange}
                   />
