@@ -17,7 +17,7 @@ import TasksBoard from '../tasks-board';
 import GetData from '../data/GetData';
 import Form from '../form/Form';
 import Signup from '../sign-up';
-import signupData from 'C:/Users/up215/OneDrive/Desktop/empAdvertrone/src/data/signup-data/signup.json'
+import signupData from '../../data/signup-data/signup.json'
 
 export const allRoutes = [
   {
