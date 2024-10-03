@@ -24,7 +24,7 @@ export const register = async (
   ifsc,
   upiId
 ) => {
-  const url = process.env.REACT_APP_BASE_URL + "/api/employee/employee";
+  const url = process.env.REACT_APP_BASE_URL + "/api/employee/signup";
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
   const body = {
