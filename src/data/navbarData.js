@@ -11,7 +11,7 @@ export const mapNavbarData = (data)=>{
             },
             {
                 to: '/form',
-                paths: [''],
+                paths: ['form'],
                 title: 'Form',
                 icon: 'employees_icon',
                 id: 'navitem-2'

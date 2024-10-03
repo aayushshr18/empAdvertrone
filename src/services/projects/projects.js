@@ -2,7 +2,7 @@ import { fetchUrl } from "../../utils/fetchUrl";
 import { getLocalStorageKey } from "../../utils/localStorage";
 
 export const getallLeads = async () => {
-  const url = process.env.REACT_APP_BASE_URI + "/api/employee/getallLeads";
+  const url = process.env.REACT_APP_BASE_URL + "/api/employee/getallLeads";
 
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
@@ -14,7 +14,7 @@ export const getallLeads = async () => {
 export const createProject = async (details) => {
   const token = getLocalStorageKey("token");
   const url =
-    process.env.REACT_APP_BASE_URI + "/api/v1/projects/create-project";
+    process.env.REACT_APP_BASE_URL + "/api/v1/projects/create-project";
 
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
@@ -31,7 +31,7 @@ export const createProject = async (details) => {
 
 export const getProjectDetails = async (id) => {
   const token = getLocalStorageKey("token");
-  const url = process.env.REACT_APP_BASE_URI + "/api/v1/projects/project";
+  const url = process.env.REACT_APP_BASE_URL + "/api/v1/projects/project";
 
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
@@ -45,7 +45,7 @@ export const getProjectDetails = async (id) => {
 
 export const getListProjects = async () => {
   const token = getLocalStorageKey("token");
-  const url = process.env.REACT_APP_BASE_URI + "/api/v1/projects/list-projects";
+  const url = process.env.REACT_APP_BASE_URL + "/api/v1/projects/list-projects";
 
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
@@ -58,7 +58,7 @@ export const getListProjects = async () => {
 export const updateProject = async (id, details) => {
   const token = getLocalStorageKey("token");
   const url =
-    process.env.REACT_APP_BASE_URI + "/api/v1/projects/update-project";
+    process.env.REACT_APP_BASE_URL + "/api/v1/projects/update-project";
 
   const headers = new Headers();
   headers.append("Content-Type", "application/json");

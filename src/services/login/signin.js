@@ -1,8 +1,8 @@
 import {fetchUrl} from '../../utils/fetchUrl';
 
 export const signin = async (email, password) =>{
-    console.log(process.env.REACT_APP_BASE_URI)
-    const url = process.env.REACT_APP_BASE_URI + '/api/employee/login';
+    console.log(process.env.REACT_APP_BASE_URL)
+    const url = process.env.REACT_APP_BASE_URL + '/api/employee/login';
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     const body = {

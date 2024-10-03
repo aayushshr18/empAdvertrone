@@ -2,7 +2,7 @@ import { fetchUrl } from "../../utils/fetchUrl";
 
 export const withdrawRequest = async (amount, employee_id, agentId) => {
   const url =
-    process.env.REACT_APP_BASE_URI + "/api/transaction/employee/withdraw";
+    process.env.REACT_APP_BASE_URL + "/api/transaction/employee/withdraw";
 
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
@@ -18,7 +18,7 @@ export const withdrawRequest = async (amount, employee_id, agentId) => {
 };
 
 export const getEmployeeTransactions = async (employee_id) => {
-  const url = `${process.env.REACT_APP_BASE_URI}/api/transaction/employee/withdraw?employee_id=${employee_id}`;
+  const url = `${process.env.REACT_APP_BASE_URL}/api/transaction/employee/withdraw?employee_id=${employee_id}`;
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
 
@@ -27,7 +27,7 @@ export const getEmployeeTransactions = async (employee_id) => {
 };
 
 export const getEmployeeData = async (employee_id) => {
-  const url = `${process.env.REACT_APP_BASE_URI}/api/employee/detail?employee_id=${employee_id}`;
+  const url = `${process.env.REACT_APP_BASE_URL}/api/employee/detail?employee_id=${employee_id}`;
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
 
@@ -36,7 +36,7 @@ export const getEmployeeData = async (employee_id) => {
 };
 
 export const getDashboardData = async (employee_id) => {
-  const url = `${process.env.REACT_APP_BASE_URI}/api/employee/dashboard/${employee_id}`;
+  const url = `${process.env.REACT_APP_BASE_URL}/api/employee/dashboard/${employee_id}`;
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
 

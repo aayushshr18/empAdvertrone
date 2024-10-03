@@ -2,7 +2,7 @@ import { fetchUrl } from "../../utils/fetchUrl";
 import { getLocalStorageKey } from "../../utils/localStorage";
 
 export const getAllLeads = async (employee_id) => {
-  const url = `${process.env.REACT_APP_BASE_URI}/api/employee/leads?employee_id=${employee_id}`;
+  const url = `${process.env.REACT_APP_BASE_URL}/api/employee/leads?employee_id=${employee_id}`;
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
 
@@ -11,7 +11,7 @@ export const getAllLeads = async (employee_id) => {
 };
 
 export const addLead = async (newLeads) => {
-  const url = process.env.REACT_APP_BASE_URI + "/api/employee/lead";
+  const url = process.env.REACT_APP_BASE_URL + "/api/employee/lead";
 
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
@@ -27,7 +27,7 @@ export const addLead = async (newLeads) => {
 };
 
 export const getAllCompanies = async () => {
-  const url = process.env.REACT_APP_BASE_URI + "/api/employee/assignments";
+  const url = process.env.REACT_APP_BASE_URL + "/api/employee/assignments";
 
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
@@ -39,7 +39,7 @@ export const getAllCompanies = async () => {
 export const getAllDepartments = async () => {
   const token = getLocalStorageKey("token");
   const url =
-    process.env.REACT_APP_BASE_URI + "/api/v1/departments/all-departments";
+    process.env.REACT_APP_BASE_URL + "/api/v1/departments/all-departments";
 
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
@@ -52,7 +52,7 @@ export const getAllDepartments = async () => {
 export const getDepartmentsCount = async () => {
   const token = getLocalStorageKey("token");
   const url =
-    process.env.REACT_APP_BASE_URI + "/api/v1/departments/department-count";
+    process.env.REACT_APP_BASE_URL + "/api/v1/departments/department-count";
 
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
@@ -65,7 +65,7 @@ export const getDepartmentsCount = async () => {
 export const createDepartment = async (details) => {
   const token = getLocalStorageKey("token");
   const url =
-    process.env.REACT_APP_BASE_URI + "/api/v1/departments/create-department";
+    process.env.REACT_APP_BASE_URL + "/api/v1/departments/create-department";
 
   const headers = new Headers();
   headers.append("Content-Type", "application/json");

@@ -13,7 +13,7 @@ const GetData = () => {
     setError(null);
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_BASE_URI}/api/employee/data?userId=${userId}`,
+        `${process.env.REACT_APP_BASE_URL}/api/employee/data?userId=${userId}`,
         {
           method: "POST",
         }
@@ -36,7 +36,7 @@ const GetData = () => {
   const handleGetUser = async () => {
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_BASE_URI}/api/employee/detail?employee_id=${userId}`,
+        `${process.env.REACT_APP_BASE_URL}/api/employee/detail?employee_id=${userId}`,
         {
           method: "GET",
         }
@@ -65,7 +65,7 @@ const GetData = () => {
     if (!data) return;
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_BASE_URI}/api/employee/flag?dataId=${data._id}`,
+        `${process.env.REACT_APP_BASE_URL}/api/employee/flag?dataId=${data._id}`,
         {
           method: "PATCH",
           headers: {

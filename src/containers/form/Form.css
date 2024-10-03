@@ -1,0 +1,186 @@
+/* Container styles */
+.container {
+  width: 100%;
+  max-width: 600px;
+  justify-content: center;
+  margin: 30px 140px; /* Center the form for all screens */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Header */
+h2 {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Fieldset and Legend styling */
+fieldset {
+  border: none;
+  margin: 0 0 20px 0;
+}
+
+legend {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Form group styling */
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  flex-basis: 100%;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+}
+
+/* Specific input widths */
+input[type="text"], input[type="number"], input[type="date"] {
+  width: calc(50% - 10px); /* Adjusted for wider screens */
+}
+
+/* Billing address group styling */
+.billing-address-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.street-address-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.street-address-group input {
+  flex: 1;
+}
+
+.city-state-zip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.city-state-zip-group input {
+  flex: 1;
+}
+
+/* Table styling */
+.timecard-table {
+  margin-top: 20px;
+}
+
+.timecard-table h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.timecard-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.timecard-table th, .timecard-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.timecard-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.timecard-table td input {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  text-align: center;
+}
+
+/* Submit button */
+.button-container {
+  text-align: center;
+}
+
+button {
+  background-color: #1d4ed8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 25px;
+}
+
+button:disabled {
+  background-color: #ccc;
+}
+
+/* Responsive design - Adjusting for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%; /* Make container almost full-width on smaller screens */
+    margin: 20px 90px;
+  }
+
+  /* Inputs should take full width on smaller screens */
+  input[type="text"], input[type="number"], input[type="date"], .street-address-group input, .city-state-zip-group input {
+    width: 100%;
+  }
+
+  /* Adjust form group to ensure labels stack above inputs on smaller screens */
+  .form-group {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  /* Adjust street address and city/state/zip to stack vertically on smaller screens */
+  .street-address-group, .city-state-zip-group {
+    flex-direction: column;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  /* Table adjustments for small screens */
+  .timecard-table th, .timecard-table td {
+    padding: 5px;
+  }
+
+  .timecard-table {
+    margin-top: 10px;
+  }
+}

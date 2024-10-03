@@ -3,7 +3,7 @@ import { fetchUrl } from "../../utils/fetchUrl";
 
 export const withdrawRequest = async (amount, employee_id) => {
   const url =
-    process.env.REACT_APP_BASE_URI + "/api/transaction/employee/withdraw";
+    process.env.REACT_APP_BASE_URL + "/api/transaction/employee/withdraw";
 
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
@@ -20,7 +20,7 @@ export const withdrawRequest = async (amount, employee_id) => {
 
 export const getAllBoards = async () => {
   const token = getLocalStorageKey("token");
-  const url = process.env.REACT_APP_BASE_URI + "/api/v1/task-board/boards";
+  const url = process.env.REACT_APP_BASE_URL + "/api/v1/task-board/boards";
 
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
@@ -32,7 +32,7 @@ export const getAllBoards = async () => {
 
 export const createBoard = async (details) => {
   const token = getLocalStorageKey("token");
-  const url = process.env.REACT_APP_BASE_URI + "/api/v1/task-board/boards";
+  const url = process.env.REACT_APP_BASE_URL + "/api/v1/task-board/boards";
 
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
@@ -49,7 +49,7 @@ export const createBoard = async (details) => {
 
 export const getBoardById = async (id) => {
   const token = getLocalStorageKey("token");
-  const url = process.env.REACT_APP_BASE_URI + "/api/v1/task-board/boards";
+  const url = process.env.REACT_APP_BASE_URL + "/api/v1/task-board/boards";
 
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
@@ -63,7 +63,7 @@ export const getBoardById = async (id) => {
 
 export const deleteBoardById = async (id) => {
   const token = getLocalStorageKey("token");
-  const url = process.env.REACT_APP_BASE_URI + "/api/v1/task-board/boards";
+  const url = process.env.REACT_APP_BASE_URL + "/api/v1/task-board/boards";
 
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
@@ -77,7 +77,7 @@ export const deleteBoardById = async (id) => {
 
 export const updateBoardById = async (id, details) => {
   const token = getLocalStorageKey("token");
-  const url = process.env.REACT_APP_BASE_URI + "/api/v1/task-board/boards";
+  const url = process.env.REACT_APP_BASE_URL + "/api/v1/task-board/boards";
 
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
