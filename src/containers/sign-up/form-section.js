@@ -53,8 +53,9 @@ const FormSection = (props) => {
       return;
     }
 
+    
     try {
-      const url = process.env.REACT_APP_BASE_URL + '/api/employee/signup';
+      const url = process.env.REACT_APP_BASE_URI + '/api/employee/signup';
       const headers = new Headers({ 'Content-Type': 'application/json' });
       const body = JSON.stringify({
         name: formState.name.value,

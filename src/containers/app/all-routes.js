@@ -15,8 +15,9 @@ import employeeDetailsData from '../../data/employeeDetailsData.json';
 import Profile from '../profile';
 import TasksBoard from '../tasks-board';
 import GetData from '../data/GetData';
-import Form from '../form/Form';
 import Signup from '../sign-up';
+import signupData from '../../data/signup-data/signup.json'
+
 
 export const allRoutes = [
   {
@@ -25,11 +26,7 @@ export const allRoutes = [
   },
   {
     path: '/signup',
-    element: <Signup {...loginData} />
-  },
-  {
-    path: '/form',
-    element: <Form />
+    element: <Signup {...signupData} />
   },
   {
     path: '/reset-password',
