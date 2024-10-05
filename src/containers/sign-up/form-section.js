@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { register } from "../../services/login/signup";
+import { fetchUrl } from "../../utils/fetchUrl";
 import { checkAllTrue } from "../../utils/check-all";
 import {
   sendErrorNotification,
@@ -15,55 +15,73 @@ import Name from "../../components/name";
 import Button from "../../components/button";
 import PhoneNumber from "../../components/phoneno";
 import AgentCode from "../../components/agentcode";
-// import AccountNo from "../../../components/accountno";
-// import Ifsc from "../../../components/ifsc";
-// import UpiId from "../../../components/upiid";
 import { Alert, AlertTitle } from "@mui/material";
 
 const FormSection = (props) => {
   const navigate = useNavigate();
-  const [[name, isNameValid], setName] = useState(["", false]);
-  const [[email, isEmailValid], setEmail] = useState(["", false]);
-  const [[password, isPasswordValid], setPassword] = useState(["", false]);
-  const [[phoneNo, isPhoneNoValid], setPhoneNo] = useState(["", false]);
-  const [[agent_code, isAgentCodeValid], setAgentCode] = useState(["", false]);
-  const [[accountNo, isAccountNoValid], setAccountNo] = useState(["", false]);
-  const [[ifsc, isIfscValid], setIfsc] = useState(["", false]);
-  const [[upiId, isUpiIdValid], setUpiId] = useState(["", false]);
+
+  // Refactor state management using objects
+  const [formState, setFormState] = useState({
+    name: { value: "", isValid: false },
+    email: { value: "", isValid: false },
+    password: { value: "", isValid: false },
+    phoneNo: { value: "", isValid: false },
+    agent_code: { value: "", isValid: false },
+    accountNo: { value: "", isValid: false },
+    ifsc: { value: "", isValid: false },
+    upiId: { value: "", isValid: false },
+  });
+
   const [message, setMessage] = useState(null);
 
-  const onSubmitHandle = async (event) => {
-    event.preventDefault();
+  const onSubmitHandle = async (e) => {
+    e.preventDefault();
+
     if (
       !checkAllTrue([
-        isEmailValid,
-        isNameValid,
-        isPasswordValid,
-        isPhoneNoValid,
-        isAgentCodeValid,
-        isAccountNoValid,
-        isIfscValid,
-        isUpiIdValid,
+        formState.email.isValid,
+        formState.name.isValid,
+        formState.password.isValid,
+        formState.phoneNo.isValid,
+        formState.agent_code.isValid,
+        formState.accountNo.isValid,
+        formState.ifsc.isValid,
+        formState.upiId.isValid,
       ])
     ) {
-      sendErrorNotification("Form Incomplete - Please fill details below.");
+      sendErrorNotification("Form Incomplete - Please fill in all details.");
       return;
     }
-    const result = await register(
-      name,
-      email,
-      password,
-      phoneNo,
-      agent_code,
-      accountNo,
-      ifsc,
-      upiId
-    );
-    if (result.success) {
-      sendSuccessNotification(result.message);
-      setMessage("We will contact you soon!");
-    } else {
-      sendErrorNotification(result.message);
+
+    try {
+      const url = process.env.REACT_APP_BASE_URL + '/api/employee/signup';
+      const headers = new Headers({ 'Content-Type': 'application/json' });
+      const body = JSON.stringify({
+        name: formState.name.value,
+        email: formState.email.value,
+        password: formState.password.value,
+        phoneNo: formState.phoneNo.value,
+        agent_code: formState.agent_code.value,
+        accountNo: formState.accountNo.value,
+        ifsc: formState.ifsc.value,
+        upiId: formState.upiId.value
+      });
+
+      const requestOptions = { method: 'POST', headers, body };
+      const response = await fetchUrl(url, requestOptions);
+
+      // Assuming fetchUrl returns a JSON response
+      console.log(response);
+
+      if (response.success) {
+        sendSuccessNotification("Success Account created successfully");
+        setMessage("We will contact you soon!");
+      } else {
+        sendErrorNotification("An error occurred.");
+      }
+    } catch (error) {
+      console.error("Error in Form Submission:", error);
+      sendErrorNotification("An error occurred while submitting the form.");
     }
   };
 
@@ -73,8 +91,8 @@ const FormSection = (props) => {
         key={key}
         {...{
           ...props,
-          value: email,
-          onChange: (value, isValid) => setEmail([value, isValid]),
+          value: formState.email.value,
+          onChange: (value, isValid) => setFormState(prev => ({ ...prev, email: { value, isValid } })),
         }}
       />
     ),
@@ -83,8 +101,8 @@ const FormSection = (props) => {
         key={key}
         {...{
           ...props,
-          value: name,
-          onChange: (value, isValid) => setName([value, isValid]),
+          value: formState.name.value,
+          onChange: (value, isValid) => setFormState(prev => ({ ...prev, name: { value, isValid } })),
         }}
       />
     ),
@@ -93,8 +111,8 @@ const FormSection = (props) => {
         key={key}
         {...{
           ...props,
-          value: password,
-          onChange: (value, isValid) => setPassword([value, isValid]),
+          value: formState.password.value,
+          onChange: (value, isValid) => setFormState(prev => ({ ...prev, password: { value, isValid } })),
         }}
       />
     ),
@@ -103,8 +121,8 @@ const FormSection = (props) => {
         key={key}
         {...{
           ...props,
-          value: phoneNo,
-          onChange: (value, isValid) => setPhoneNo([value, isValid]),
+          value: formState.phoneNo.value,
+          onChange: (value, isValid) => setFormState(prev => ({ ...prev, phoneNo: { value, isValid } })),
         }}
       />
     ),
@@ -113,8 +131,8 @@ const FormSection = (props) => {
         key={key}
         {...{
           ...props,
-          value: agent_code,
-          onChange: (value, isValid) => setAgentCode([value, isValid]),
+          value: formState.agent_code.value,
+          onChange: (value, isValid) => setFormState(prev => ({ ...prev, agent_code: { value, isValid } })),
         }}
       />
     ),
@@ -123,8 +141,8 @@ const FormSection = (props) => {
         key={key}
         {...{
           ...props,
-          value: accountNo,
-          onChange: (value, isValid) => setAccountNo([value, isValid]),
+          value: formState.accountNo.value,
+          onChange: (value, isValid) => setFormState(prev => ({ ...prev, accountNo: { value, isValid } })),
         }}
       />
     ),
@@ -133,8 +151,8 @@ const FormSection = (props) => {
         key={key}
         {...{
           ...props,
-          value: ifsc,
-          onChange: (value, isValid) => setIfsc([value, isValid]),
+          value: formState.ifsc.value,
+          onChange: (value, isValid) => setFormState(prev => ({ ...prev, ifsc: { value, isValid } })),
         }}
       />
     ),
@@ -143,13 +161,13 @@ const FormSection = (props) => {
         key={key}
         {...{
           ...props,
-          value: upiId,
-          onChange: (value, isValid) => setUpiId([value, isValid]),
+          value: formState.upiId.value,
+          onChange: (value, isValid) => setFormState(prev => ({ ...prev, upiId: { value, isValid } })),
         }}
       />
     ),
     button: (key, props) => (
-      <Button className="signup" key={key} {...{ ...props }} />
+      <Button className="signup" key={key} {...props} />
     ),
     link: (key, props) => (
       <Link key={key} className="signin-link" {...props}>

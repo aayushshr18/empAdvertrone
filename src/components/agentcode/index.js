@@ -25,7 +25,7 @@ const AgentCode = (props) => {
   return (
     <div className={`name-component ${isError ? "error" : ""}`}>
       <div className="name-wrapper">
-        <div className="text">{props.label}</div>
+        <div className="text">Employee ID</div>
         <input
           className="name-input"
           type="text"
