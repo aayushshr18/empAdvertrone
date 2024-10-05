@@ -1,5 +1,6 @@
 /* Container styles */
 .container {
+  overflow: scroll;
   width: 100%;
   max-width: 600px;
   justify-content: center;
@@ -86,6 +87,40 @@ input[type="text"], input[type="number"], input[type="date"] {
 .city-state-zip-group input {
   flex: 1;
 }
+
+.pay-details-table {
+  margin-top: 20px;
+}
+
+.pay-details-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.pay-details-table th, .pay-details-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.pay-details-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.pay-details-table input {
+  width: 100%;
+  border: none;
+  text-align: center;
+  padding: 4px;
+  outline: none;
+}
+
+.pay-details-table input:focus {
+  border: 1px solid #ddd;
+}
+
 
 /* Table styling */
 .timecard-table {

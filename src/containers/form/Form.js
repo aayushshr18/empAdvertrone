@@ -4,7 +4,7 @@ import './Form.css';
 
 const Form = () => {
   const [formData, setFormData] = useState({
-    userId: '', // Assuming this comes from authentication context or input
+    userId: '',
     poNo: '',
     billingAddress: '',
     invNo: '',
@@ -15,8 +15,9 @@ const Form = () => {
     pinCode: '',
     city: '',
     state: '',
-    table1: ['', '', '', '', '', '', '', ''], // Matches table1 array
-    webCenterTimeDetails: Array(8).fill(Array(7).fill('')), // Initializes a 7x8 table as described in schema
+    table1: ['', '', '', '', '', '', '', ''],
+    webCenterTimeDetails: Array(8).fill(Array(7).fill('')),
+    payDetails: { payCode: '', regHrs: '', otHrs: '', dHrs: '', billRate: '', otBillRate: '', dBillRate: '', total: '' }, // Single row for pay details
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -31,6 +32,10 @@ const Form = () => {
       rIdx === rowIndex ? row.map((col, cIdx) => cIdx === colIndex ? value : col) : row
     );
     setFormData({ ...formData, webCenterTimeDetails: updatedTable });
+  };
+
+  const handlePayDetailsChange = (name, value) => {
+    setFormData({ ...formData, payDetails: { ...formData.payDetails, [name]: value } });
   };
 
   const handleSubmit = async (e) => {
@@ -64,6 +69,7 @@ const Form = () => {
           state: '',
           table1: ['', '', '', '', '', '', '', ''],
           webCenterTimeDetails: Array(8).fill(Array(7).fill('')),
+          payDetails: { payCode: '', regHrs: '', otHrs: '', dHrs: '', billRate: '', otBillRate: '', dBillRate: '', total: '' }, // Reset pay details to one row
         });
       } else {
         alert("Error submitting the form. Please try again.");
@@ -105,56 +111,53 @@ const Form = () => {
             />
           </div>
 
+          {/* Billing Address */}
           <div className="billing-address-group">
-  <label>Billing Address</label>
-
-  {/* Street Address 1 and Street Address 2 on the same line */}
-  <div className="street-address-group">
-    <input
-      type="text"
-      name="billingAddress"
-      placeholder="Street Address 1"
-      value={formData.billingAddress}
-      onChange={handleChange}
-      required
-    />
-    <input
-      type="text"
-      name="street"
-      placeholder="Street Address 2"
-      value={formData.street}
-      onChange={handleChange}
-    />
-  </div>
-
-  {/* City, State, and Postal Code on the next line */}
-  <div className="city-state-zip-group">
-    <input
-      type="text"
-      name="city"
-      placeholder="City"
-      value={formData.city}
-      onChange={handleChange}
-      required
-    />
-    <input
-      type="text"
-      name="state"
-      placeholder="State / Province"
-      value={formData.state}
-      onChange={handleChange}
-      required
-    />
-    <input
-      type="text"
-      name="pinCode"
-      placeholder="Postal / Zip Code"
-      value={formData.pinCode}
-      onChange={handleChange}
-      required
-    />
-  </div>
-</div>
+            <label>Billing Address</label>
+            <div className="street-address-group">
+              <input
+                type="text"
+                name="billingAddress"
+                placeholder="Street Address 1"
+                value={formData.billingAddress}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="text"
+                name="street"
+                placeholder="Street Address 2"
+                value={formData.street}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="city-state-zip-group">
+              <input
+                type="text"
+                name="city"
+                placeholder="City"
+                value={formData.city}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="text"
+                name="state"
+                placeholder="State / Province"
+                value={formData.state}
+                onChange={handleChange}
+                required
+              />
+              <input
+                type="text"
+                name="pinCode"
+                placeholder="Postal / Zip Code"
+                value={formData.pinCode}
+                onChange={handleChange}
+                required
+              />
+            </div>
+          </div>
 
           {/* Invoice Details */}
           <div className="form-group">
@@ -194,6 +197,41 @@ const Form = () => {
               required
             />
           </div>
+
+          {/* New Pay Details Table (Single Row) */}
+          {/* Pay Details Table */}
+          <div className="pay-details-table">
+            <h3>Pay Details</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Pay Code</th>
+                  <th>Reg Hrs</th>
+                  <th>OT Hrs</th>
+                  <th>D Hrs</th>
+                  <th>Bill Rate</th>
+                  <th>OT Bill Rate</th>
+                  <th>D Bill Rate</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  {Object.keys(formData.payDetails).map((key) => (
+                    <td key={key}>
+                      <input
+                        type="text"
+                        name={key}
+                        value={formData.payDetails[key]}
+                        onChange={(e) => handlePayDetailsChange(key, e.target.value)}
+                      />
+                    </td>
+                  ))}
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
 
           {/* WebCenter Timecard Table */}
           <div className="timecard-table">
