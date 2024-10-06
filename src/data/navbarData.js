@@ -1,18 +1,12 @@
 export const mapNavbarData = (data)=>{
     return {
-        header : 'Advertrone Technologies',
+        
         navbarItems : [
+           
             {
-                to: '/',
-                paths: [''],
-                title: 'Dashboard',
-                icon: 'home_icon',
-                id: 'navitem-1'
-            },
-            {
-                to: '/form',
-                paths: [''],
-                title: 'Form',
+                to: '/employees',
+                paths: ['employees'],
+                title: 'Assigement',
                 icon: 'employees_icon',
                 id: 'navitem-2'
             },
@@ -30,20 +24,15 @@ export const mapNavbarData = (data)=>{
                 icon: 'projects_icon',
                 id: 'navitem-4'
             },
+            
             {
-                to: '/tasks',
-                paths: ['tasks'],
-                title: 'Withrawal',
-                icon: 'tasks_icon',
-                id: 'navitem-5'
+                to: '/taskdata',
+                paths: ['taskdata'],
+                title: 'Data Task',
+                icon: 'data_icon',
+                id: 'navitem-6'
             },
-            {
-                to: '/profile',
-                paths: ['profile'],
-                title: 'Withrawal History',
-                icon: 'profile_icon',
-                id: 'navitem-8'
-            },
+            
         ],
         employeeName: data?.name ?? '😎'
     }

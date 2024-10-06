@@ -152,7 +152,7 @@ const Departments = () => {
               <TableHead>
                 <TableRow>
                   <StyledTableCell style={{ padding: "1px 6px" }}>
-                    AGENT CODE SELF
+                    Customer Id SELF
                   </StyledTableCell>
                 </TableRow>
               </TableHead>
@@ -196,21 +196,21 @@ const Departments = () => {
                   <TextField
                     id="referred_agent_id"
                     name="referred_agent_id"
-                    label="Employee Id:"
+                    label="Customer Id:"
                     value={newLeads.referred_agent_id}
                     onChange={handleInputChange}
                   />
                   <TextField
                     id="name"
                     name="name"
-                    label="File Name:"
+                    label="Name:"
                     value={newLeads.name}
                     onChange={handleInputChange}
                   />
                   <TextField
                     id="mob_no"
                     name="mob_no"
-                    label="PO Number:"
+                    label="Number:"
                     value={newLeads.mob_no}
                     onChange={handleInputChange}
                   />
@@ -242,7 +242,7 @@ const Departments = () => {
                       Status
                     </StyledTableCell>
                     <StyledTableCell style={{ padding: "1px 5px" }}>
-                      Agent_Code
+                      Customer_Id
                     </StyledTableCell>
                     <StyledTableCell style={{ padding: "1px 5px" }}>
                       Date
