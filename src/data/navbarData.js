@@ -1,6 +1,6 @@
 export const mapNavbarData = (data)=>{
     return {
-        header : 'Advertrone Technologies',
+        
         navbarItems : [
             {
                 to: '/',
