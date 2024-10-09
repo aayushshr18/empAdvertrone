@@ -4,7 +4,7 @@ import './Form.css';
 
 const Form = () => {
   const [formData, setFormData] = useState({
-    userId: '',
+    EmployeeId: '',
     poNo: '',
     billingAddress: '',
     invNo: '',
@@ -56,7 +56,7 @@ const Form = () => {
         alert("Form submitted successfully!");
         // Optionally reset the form
         setFormData({
-          userId: '',
+          EmployeeId: '',
           poNo: '',
           billingAddress: '',
           invNo: '',
@@ -91,11 +91,11 @@ const Form = () => {
 
           {/* Employee and Billing Info */}
           <div className="form-group">
-            <label>User ID</label>
+            <label>Employee ID</label>
             <input
               type="text"
               name="userId"
-              placeholder="User ID"
+              placeholder="Employee ID"
               value={formData.userId}
               onChange={handleChange}
               required
@@ -191,7 +191,7 @@ const Form = () => {
             <input
               type="text"
               name="customer"
-              placeholder="Customer Name"
+              placeholder="Customer#"
               value={formData.customer}
               onChange={handleChange}
               required
