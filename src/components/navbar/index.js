@@ -109,7 +109,7 @@ const Navbar = () => {
         <li>
           <Link to={"/"}>
             <span className="icon"></span>
-            <span className="title brand">Advertrone</span>
+            <span className="title brand">CRM Pannel</span>
           </Link>
         </li>
 
