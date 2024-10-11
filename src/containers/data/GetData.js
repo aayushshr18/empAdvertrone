@@ -95,8 +95,7 @@ const GetData = () => {
   };
 
   const getWhatsAppUrl = (phoneNumber) => {
-    let message = `Hi ${data.name},  I'm ${username}, from Advertrone Technologies Pvt Ltd.
-I received your inquiry for telecalling job, are you interested for work from home based job without any charges or investment?`;
+    let message = `Hello, ${data.name},  I am ${username}, from Amazon Offer Wall. If you are an existing Amazon user and planning to make a purchase, we can help you get a 20% to 30% cashback on Amazon Pay.`;
     const encodedMessage = encodeURIComponent(message);
     return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   };
