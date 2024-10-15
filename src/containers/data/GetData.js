@@ -90,9 +90,10 @@ const GetData = () => {
   };
 
   const handleWhatsApp = () => {
-    const url = getWhatsAppUrl(data.number);
-    window.location.href = url;
-  };
+  const url = getWhatsAppUrl(data.number);
+  window.open(url, '_blank');
+};
+
 
   const getWhatsAppUrl = (phoneNumber) => {
     let message = `Hello, ${data.name},  I am ${username}, from Amazon Offer Wall. If you are an existing Amazon user and planning to make a purchase, we can help you get a 20% to 30% cashback on Amazon Pay.`;
