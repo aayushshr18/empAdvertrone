@@ -4,8 +4,8 @@
   left: 0px;
   width: 200px;
   height: 100%;
-  background: var(--blue);
-  border-left: 10px solid var(--blue);
+  background: #996633;
+  border-left: 10px solid #996633;
   transition: 0.5s;
   overflow: hidden;
   z-index: 500;
@@ -51,7 +51,7 @@
 }
 .navigation ul li:hover a,
 .navigation ul li.hovered a {
-  color: var(--blue);
+  color: #996633;
 }
 
 .navigation ul li a .icon {

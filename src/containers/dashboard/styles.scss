@@ -28,7 +28,7 @@
             position: relative;
             font-weight: 500;
             font-size: 2.5rem;
-            color: var(--blue);
+            color: #996633;
           }
           .cardName {
             color: var(--black2);
@@ -40,7 +40,7 @@
             color: var(--black2);
           }
           &:hover {
-            background: var(--blue);
+            background: #996633;
             .numbers, .cardName, .iconBx {
               color: var(--white);
             }
@@ -75,12 +75,12 @@
       }
       .cardHeader h2 {
         font-weight: 600;
-        color: var(--blue);
+        color: #996633;
       }
       .cardHeader .btn {
         position: relative;
         padding: 5px 10px;
-        background: var(--blue);
+        background: #996633;
         text-decoration: none;
         color: var(--white);
         border-radius: 6px;
@@ -102,7 +102,7 @@
         border-bottom: none;
       }
       .details .recentOrders table tbody tr:hover {
-        background: var(--blue);
+        background: #996633;
         color: var(--white);
       }
       .details .recentOrders table tr td {
@@ -186,7 +186,7 @@
         cursor: pointer;
       }
       .recentCustomers table tr:hover {
-        background: var(--blue);
+        background: #996633;
         color: var(--white);
       }
       .recentCustomers table tr:hover td h4 span {
